@@ -18,13 +18,14 @@ import numpy as np
 import soundfile
 
 from dataset import Dataset
-from engine import Engine
+#from engine import Engine
 
 _random = np.random.RandomState(seed=778)
 
 
 def _pcm_energy(pcm):
-    frame_length = Engine.frame_length()
+    #frame_length = Engine.frame_length()
+    frame_length = 512
     num_frames = pcm.size // frame_length
 
     pcm_frames = pcm[:(num_frames * frame_length)].reshape((num_frames, frame_length))

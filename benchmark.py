@@ -19,7 +19,7 @@ import logging
 import multiprocessing
 
 from dataset import *
-from engine import *
+#from engine import *
 from mixer import create_test_files
 
 logging.basicConfig(format='%(asctime)s:%(levelname)s:%(message)s', level=logging.INFO)
@@ -118,12 +118,18 @@ if __name__ == '__main__':
 
     speech_path = os.path.join(os.path.dirname(__file__), '%s_speech.wav' % args.keyword)
     label_path = os.path.join(os.path.dirname(__file__), '%s_label.txt' % args.keyword)
-    create_test_files(
-        speech_path=speech_path,
-        label_path=label_path,
-        keyword_dataset=keyword_dataset,
-        background_dataset=background_dataset,
-        noise_dataset=noise_dataset)
+    # create_test_files(
+    #     speech_path=speech_path,
+    #     label_path=label_path,
+    #     keyword_dataset=keyword_dataset,
+    #     background_dataset=background_dataset,
+    #     noise_dataset=noise_dataset)
 
-    with multiprocessing.Pool() as pool:
-        save(pool.map(run, [x for x in Engines]))
+    print(str(keyword_dataset) + '\n')
+    print(str(background_dataset) + '\n')
+    print(str(noise_dataset) + '\n')
+    print(str(speech_path) + '\n')
+    print(str(label_path) + '\n')
+
+    #with multiprocessing.Pool() as pool:
+        #save(pool.map(run, [x for x in Engines]))
