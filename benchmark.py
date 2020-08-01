@@ -118,12 +118,12 @@ if __name__ == '__main__':
 
     speech_path = os.path.join(os.path.dirname(__file__), '%s_speech.wav' % args.keyword)
     label_path = os.path.join(os.path.dirname(__file__), '%s_label.txt' % args.keyword)
-    # create_test_files(
-    #     speech_path=speech_path,
-    #     label_path=label_path,
-    #     keyword_dataset=keyword_dataset,
-    #     background_dataset=background_dataset,
-    #     noise_dataset=noise_dataset)
+    create_test_files(
+        speech_path=speech_path,
+        label_path=label_path,
+        keyword_dataset=keyword_dataset,
+        background_dataset=background_dataset,
+        noise_dataset=noise_dataset)
 
     print(str(keyword_dataset) + '\n')
     print(str(background_dataset) + '\n')
